@@ -20,7 +20,7 @@ const pixelifySans = Pixelify_Sans({
 });
 
 export const metadata: Metadata = {
-  title: `${profile.name} — ${profile.role}`,
+  title: profile.name,
   description: profile.bio[0],
 };
 

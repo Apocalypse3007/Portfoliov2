@@ -107,6 +107,37 @@ body {
   animation: shine-sweep 9s ease-in-out infinite;
 }
 
+/* coding scene */
+@keyframes screen-glow {
+  0%,
+  100% {
+    background: #5271ff;
+  }
+  33% {
+    background: #8ea1ff;
+  }
+  66% {
+    background: #2dd4bf;
+  }
+}
+@utility animate-screen-glow {
+  animation: screen-glow 3s ease-in-out infinite;
+}
+
+@keyframes cursor-blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+@utility animate-cursor-blink {
+  animation: cursor-blink 1s step-end infinite;
+}
+
 /* scrollbar */
 ::-webkit-scrollbar {
   width: 10px;

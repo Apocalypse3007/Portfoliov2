@@ -6,14 +6,16 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { profile } from "@/lib/data";
 import { HeroBackground } from "./HeroBackground";
 import { LiveClock } from "./LiveClock";
+import { CodingScene } from "./CodingScene";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6">
+    <section className="relative flex min-h-[92vh] flex-col justify-center overflow-hidden px-6 pb-20">
       <HeroBackground />
       <LiveClock />
 
-      <div className="relative mx-auto w-full max-w-5xl">
+      <div className="relative mx-auto flex w-full max-w-6xl flex-col items-center gap-10 lg:flex-row lg:items-center lg:justify-between">
+      <div className="w-full lg:flex-1">
         <motion.p
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -72,6 +74,9 @@ export function Hero() {
             Get in touch
           </a>
         </motion.div>
+      </div>
+
+        <CodingScene />
       </div>
 
       <motion.div

@@ -91,6 +91,29 @@ export const experience: ExperienceEntry[] = [
   },
 ];
 
+export type Paper = {
+  title: string;
+  venue: string;
+  date: string;
+  href: string;
+};
+
+export const papers: Paper[] = [
+  {
+    title:
+      "Obey, Diverge, Collapse: Blind Obedience to Incorrect Instructions Drives Code LLMs to Irrecoverable Code Semantic Collapse",
+    venue: "arXiv",
+    date: "Jul 2026",
+    href: "https://arxiv.org/abs/2607.04537",
+  },
+  {
+    title: "Detection of Fake News",
+    venue: "IJARESM",
+    date: "Jul 2022",
+    href: "https://www.ijaresm.com/uploaded_files/document_file/Adit_DahiyajnK2.pdf",
+  },
+];
+
 export type Game = {
   name: string;
   image?: string;

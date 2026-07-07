@@ -29,7 +29,7 @@ export function OffDuty({ films }: { films: LetterboxdFilm[] }) {
   return (
     <section id="off-duty" className="mx-auto max-w-5xl px-6 py-24">
       <RevealOnScroll>
-        <SectionLabel index="03" label="off duty" />
+        <SectionLabel index="04" label="off duty" />
         <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
           Games &amp; Movies
         </h2>

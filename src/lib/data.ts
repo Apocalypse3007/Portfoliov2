@@ -17,8 +17,8 @@ export const profile = {
   ],
   email: "singhanany3007@gmail.com",
   links: {
-    github: "https://github.com/ananysingh",
-    linkedin: "https://linkedin.com/in/anany-singh",
+    github: "https://github.com/Apocalypse3007",
+    linkedin: "https://www.linkedin.com/in/-anany-singh-/",
     resume: "/resume.pdf",
     x: "https://x.com/Apocalypse3007",
     // TODO: add real handle once provided
@@ -61,6 +61,14 @@ export type ExperienceEntry = {
 export const experience: ExperienceEntry[] = [
   {
     kind: "work",
+    org: "Aakaar AI",
+    role: "Software Development Engineer",
+    date: "May 2026 — Present",
+    description:
+      "Architected an AI-powered Listing Agent that generates optimized product imagery for Amazon sellers, plus the async job pipeline (sessions, generations, jobs) and analytics instrumentation behind it.",
+  },
+  {
+    kind: "work",
     org: "MIDAS Lab",
     role: "Undergraduate Researcher",
     date: "Jan 2026 — Present",
@@ -74,20 +82,6 @@ export const experience: ExperienceEntry[] = [
     date: "Dec 2024",
     description:
       "Built the entire frontend in Next.js and wired it to an existing backend model, accelerating the project timeline by 25% and improving frontend load times by 40%.",
-  },
-  {
-    kind: "education",
-    org: "IIIT Delhi",
-    role: "BTech, Electronics & VLSI Engineering",
-    date: "Aug 2023 — Present",
-    description: "Indraprastha Institute of Information Technology, New Delhi.",
-  },
-  {
-    kind: "publication",
-    org: "IJARESM",
-    role: "Detection of Fake News",
-    date: "Jul 2022",
-    description: "Published in the International Journal of All Research Education and Scientific Methods.",
   },
 ];
 
@@ -194,7 +188,7 @@ export const projects: Project[] = [
       "Responsive Tailwind UI, 100% cross-device compatible",
     ],
     stack: ["TypeScript", "React", "PostgreSQL", "TailwindCSS", "WebSockets"],
-    href: "https://github.com/ananysingh",
+    href: "https://github.com/Apocalypse3007/collaborative-drawing",
   },
   {
     name: "SignTrack",
@@ -207,7 +201,20 @@ export const projects: Project[] = [
       "Optimized inference speed for real-time use",
     ],
     stack: ["Python", "OpenCV", "TensorFlow", "React"],
-    href: "https://github.com/ananysingh",
+    href: "https://github.com/Apocalypse3007/SignTrack",
+  },
+  {
+    name: "BFT-Metronome: Byzantine Fault-Tolerant Clock Synchronization",
+    date: "Jan 2025 – May 2025",
+    description:
+      "A novel Byzantine fault-tolerant clock synchronization protocol combining the Brooks-Iyengar sensor fusion algorithm with Inter-Tertile Range (ITR) outlier detection to achieve bounded-error time agreement in adversarial peer-to-peer networks, tolerating up to N/3−1 malicious nodes.",
+    bullets: [
+      "Switched from quartile- to tertile-based outlier filtering, raising Byzantine tolerance from 25% to the theoretical 33% bound",
+      "Applied Brooks-Iyengar interval fusion to aggregate uncertainty ranges into a single consensus offset with a quantified confidence interval",
+      "Built a modular 4-crate Rust workspace (core algorithms, libp2p networking, Byzantine simulation framework, reference CLI node), holding consensus with ~100ms divergence at 50 nodes with 32% Byzantine peers",
+    ],
+    stack: ["Rust", "libp2p", "Distributed Systems"],
+    href: "https://github.com/heemankv/BFT-Metronome",
   },
   {
     name: "AI-Powered Mental Health Chatbot",

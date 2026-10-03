@@ -38,7 +38,7 @@ function Monogram({ name, logo, cover }: { name: string; logo?: string; cover?: 
 export default function WorkSection() {
   const work = experience.filter((e) => e.kind === "work");
   return (
-    <Accordion type="single" collapsible defaultValue={work[0]?.org} className="w-full grid gap-6">
+    <Accordion type="single" collapsible className="w-full grid gap-6">
       {work.map((item) => (
         <AccordionItem key={item.org} value={item.org} className="w-full border-b-0 grid gap-2">
           <AccordionTrigger className="hover:no-underline p-0 cursor-pointer transition-colors rounded-none group [&>svg]:hidden">
@@ -66,7 +66,7 @@ export default function WorkSection() {
                       />
                     </span>
                   </div>
-                  <div className="font-sans text-sm text-muted-foreground">{item.role}</div>
+                  <div className="font-sans text-xs text-foreground/80">{item.role}</div>
                 </div>
               </div>
               <div className="flex items-center gap-1 text-xs tabular-nums text-muted-foreground text-right flex-none">
@@ -74,7 +74,7 @@ export default function WorkSection() {
               </div>
             </div>
           </AccordionTrigger>
-          <AccordionContent className="p-0 ml-13 text-xs sm:text-sm text-muted-foreground">
+          <AccordionContent className="p-0 ml-13 text-sm text-foreground">
             {item.description}
           </AccordionContent>
         </AccordionItem>

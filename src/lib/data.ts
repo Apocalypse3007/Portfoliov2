@@ -77,7 +77,7 @@ export const experience: ExperienceEntry[] = [
     role: "Software Development Engineer",
     date: "May 2026 — Present",
     description:
-      "Architected and built an AI-powered Listing Agent for Amazon sellers with 2 entry flows (ASIN-based and description-based), generating 7 named slot images and 6 discovery/archetype variations per session, and owned 20 tracked tickets (10 P0). Designed a 4-table data model and async job pipeline with status tracking and per-slot versioning, then implemented free-tier quota enforcement and closed 2 quota-bypass paths that allowed unmetered generation.",
+      "AI-powered tools for Amazon sellers.",
   },
   {
     kind: "work",
@@ -86,7 +86,7 @@ export const experience: ExperienceEntry[] = [
     role: "Undergraduate Researcher",
     date: "Jan 2026 — Present",
     description:
-      "Co-authored a study of 5 code LLMs on 538 executable RunBugRun problems: confidently wrong debugging instructions cut pass rates by up to 30 points and left every model below its no-guidance baseline. Identified \"Blind Obedience\" (models flag the wrong instruction as incorrect, yet still follow it), confirmed with paired McNemar tests (p < 0.001 on all 5 models). Built a multi-pass agentic evaluation harness showing most corrupted programs stay unrecovered.",
+      "Researching why code LLMs follow wrong instructions.",
   },
   {
     kind: "work",
@@ -96,7 +96,7 @@ export const experience: ExperienceEntry[] = [
     role: "Full-Stack Intern",
     date: "Dec 2024",
     description:
-      "Built the entire frontend in Next.js and wired it to an existing backend model, accelerating the project timeline by 25% and improving frontend load times by 40%.",
+      "3D digitisation and AI imagery for fashion stores.",
   },
 ];
 

@@ -9,11 +9,16 @@ export const profile = {
     "Video Game Nerd",
   ],
   location: "New Delhi, India",
+  description:
+    "Software developer and undergraduate researcher into AI, finance and code LLMs. Sports geek, video game nerd and movie buff.",
+  summary:
+    "I'm a BTech student at IIIT Delhi building AI products at Aakaar AI and researching Code LLMs at MIDAS Lab. Curiosity got me here: I started by poking around game files to squeeze more performance out of my PC, and these days I'm deep into code, with AI and finance holding most of my attention. Outside of that, you'll find me gaming or catching up on movies.",
   bio: [
-    "I've been an Iron Man fan since before I could properly explain what an arc reactor was, thanks to a childhood spent watching Marvel on loop. My real entry into tech happened almost by accident. My parents had a computer at home, and I started poking around it early, using it here and there without much of a plan. Video games pulled me in next, and when my PC couldn't quite keep up, I started digging into game files and tweaking things just to get a little more performance out of it.",
-    "That curiosity never really left. Along the way, I dabbled in Photoshop and FL Studio, just enough to get a feel for design and music production, though I never took either past the beginner stage. It was fun to explore, but it always felt more like a detour than the destination.",
-    "These days, that original curiosity has me deep into code, with AI and finance holding most of my attention. I'm still the same person who used to take apart game files just to see how they worked. I've just traded one set of files for another.",
-    "Outside of that, gaming is still very much a part of my leisure time, and I've grown into a bit of a movie buff along the way. You can find what I'm currently watching, playing, or working on below.",
+    "Tldr; started by tearing apart game files to squeeze out more FPS.",
+    "Iron Man fan since before I could explain what an arc reactor was.",
+    "Deep into code, with AI and finance holding most of my attention.",
+    "Dabbled in Photoshop and FL Studio. Never took either past beginner.",
+    "Still gaming, and a bit of a movie buff on the side.",
   ],
   email: "singhanany3007@gmail.com",
   links: {
@@ -26,29 +31,31 @@ export const profile = {
   },
 };
 
+
 export const skills = {
-  Languages: ["C", "C++", "Python", "Java", "JavaScript", "TypeScript", "SQL", "Golang", "Rust", "Solidity"],
-  "Frameworks & Tools": [
-    "React",
-    "Next.js",
-    "Node.js",
-    "NextAuth",
-    "Turborepo",
-    "TailwindCSS",
-    "Redis",
-    "Docker",
-    "Git",
-    "Postman",
-  ],
-  "AI / ML": ["TensorFlow", "PyTorch", "Keras", "Scikit-learn", "LangChain", "Pandas", "NumPy"],
+  Languages: ["Python", "C", "C++", "Rust", "Golang", "Java", "JavaScript", "SQL"],
+  "Frameworks & Tools": ["React", "Node.js", "Next.js", "Docker", "Kafka", "Google Cloud", "Git", "Postman"],
+  "AI / ML": ["PyTorch", "TensorFlow", "Keras", "Scikit-learn", "Pandas", "NumPy"],
   Concepts: [
     "Machine Learning",
-    "Data Structures & Algorithms",
-    "Object-Oriented Design",
-    "Operating Systems",
-    "Database Management Systems",
+    "LLM Evaluation",
+    "Agentic Systems",
+    "Data Structures",
+    "Algorithms",
+    "Distributed Systems",
   ],
 };
+
+export const education = [
+  {
+    school: "Indraprastha Institute of Information Technology",
+    degree: "BTech in Electronics and VLSI Engineering",
+    start: "Aug 2023",
+    end: "Present",
+    href: "https://www.iiitd.ac.in",
+    logo: "/iiitd.png",
+  },
+];
 
 export type ExperienceEntry = {
   kind: "work" | "education" | "publication";
@@ -56,28 +63,36 @@ export type ExperienceEntry = {
   role: string;
   date: string;
   description: string;
+  logo?: string;
+  /** Fill the avatar circle instead of fitting inside it (for full-bleed logo art). */
+  logoCover?: boolean;
 };
+
 
 export const experience: ExperienceEntry[] = [
   {
     kind: "work",
     org: "Aakaar AI",
+    logo: "/aakaar.png",
     role: "Software Development Engineer",
     date: "May 2026 — Present",
     description:
-      "Architected an AI-powered Listing Agent that generates optimized product imagery for Amazon sellers, plus the async job pipeline (sessions, generations, jobs) and analytics instrumentation behind it.",
+      "Architected and built an AI-powered Listing Agent for Amazon sellers with 2 entry flows (ASIN-based and description-based), generating 7 named slot images and 6 discovery/archetype variations per session, and owned 20 tracked tickets (10 P0). Designed a 4-table data model and async job pipeline with status tracking and per-slot versioning, then implemented free-tier quota enforcement and closed 2 quota-bypass paths that allowed unmetered generation.",
   },
   {
     kind: "work",
     org: "MIDAS Lab",
+    logo: "/midas.png",
     role: "Undergraduate Researcher",
     date: "Jan 2026 — Present",
     description:
-      "Evaluating and enhancing Code LLMs through the design and orchestration of autonomous agent-based workflows, building benchmarking frameworks to assess model performance and edge-case behavior.",
+      "Co-authored a study of 5 code LLMs on 538 executable RunBugRun problems: confidently wrong debugging instructions cut pass rates by up to 30 points and left every model below its no-guidance baseline. Identified \"Blind Obedience\" (models flag the wrong instruction as incorrect, yet still follow it), confirmed with paired McNemar tests (p < 0.001 on all 5 models). Built a multi-pass agentic evaluation harness showing most corrupted programs stay unrecovered.",
   },
   {
     kind: "work",
     org: "Camarin AI",
+    logo: "/camarin.png",
+    logoCover: true,
     role: "Full-Stack Intern",
     date: "Dec 2024",
     description:
@@ -167,6 +182,7 @@ export const games: Game[] = [
   },
 ];
 
+
 export type Project = {
   name: string;
   date: string;
@@ -178,27 +194,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "Collaborative Drawing",
-    date: "May 2025",
+    name: "Sputniq AgentOS",
+    date: "May 2026",
     description:
-      "A real-time collaborative drawing tool built on WebSockets and a pub/sub architecture, supporting sub-100ms latency updates for up to 50 concurrent users.",
+      "A config-driven orchestration platform for deploying distributed agentic AI systems, cutting deployment to a single zip upload or one docker compose up.",
     bullets: [
-      "p5.js-powered canvas with live shape rendering and real-time parameter editing",
-      "Over 95% input responsiveness with under 50ms rendering delay",
-      "Responsive Tailwind UI, 100% cross-device compatible",
+      "Provisions apps across 15 Docker-in-Docker worker nodes via a FastAPI control API, a Kafka message bus and a CLI (init, validate, build, package, deploy)",
+      "Scripted node provisioning (SSH key generation, image build, network attachment) and orchestrated the Control API, Kafka and Zookeeper in one Docker Compose stack",
     ],
-    stack: ["TypeScript", "React", "PostgreSQL", "TailwindCSS", "WebSockets"],
-    href: "https://github.com/Apocalypse3007/collaborative-drawing",
+    stack: ["Python", "FastAPI", "Kafka", "Docker"],
+    href: "https://github.com/Apocalypse3007/Sputniq-AgentOS",
   },
   {
     name: "SignTrack",
     date: "Mar 2025",
     description:
-      "A computer-vision tool that processes dashcam footage to detect and count traffic signals encountered during a drive.",
+      "A real-time computer vision pipeline for traffic-signal detection and counting from dashcam footage.",
     bullets: [
-      "YOLOv8 object detection fine-tuned for traffic-light recognition",
-      "91% detection accuracy across urban and highway datasets",
-      "Optimized inference speed for real-time use",
+      "Fine-tuned a pretrained YOLOv8 model via transfer learning on a custom-annotated dataset",
+      "Augmentation pipeline (brightness/contrast jitter, motion blur, synthetic fog/rain) and IoU-based NMS tuning to cut false positives",
+      "Geotagged detections with GPS metadata and used DBSCAN clustering to deduplicate repeated sightings of the same signal",
     ],
     stack: ["Python", "OpenCV", "TensorFlow", "React"],
     href: "https://github.com/Apocalypse3007/SignTrack",
@@ -207,25 +222,12 @@ export const projects: Project[] = [
     name: "BFT-Metronome: Byzantine Fault-Tolerant Clock Synchronization",
     date: "Jan 2025 – May 2025",
     description:
-      "A novel Byzantine fault-tolerant clock synchronization protocol combining the Brooks-Iyengar sensor fusion algorithm with Inter-Tertile Range (ITR) outlier detection to achieve bounded-error time agreement in adversarial peer-to-peer networks, tolerating up to N/3−1 malicious nodes.",
+      "A novel Byzantine fault-tolerant clock synchronization protocol combining Brooks-Iyengar sensor fusion with Inter-Tertile Range (ITR) outlier detection to achieve bounded-error time agreement in adversarial peer-to-peer networks, tolerating up to N/3−1 malicious nodes.",
     bullets: [
       "Switched from quartile- to tertile-based outlier filtering, raising Byzantine tolerance from 25% to the theoretical 33% bound",
       "Applied Brooks-Iyengar interval fusion to aggregate uncertainty ranges into a single consensus offset with a quantified confidence interval",
-      "Built a modular 4-crate Rust workspace (core algorithms, libp2p networking, Byzantine simulation framework, reference CLI node), holding consensus with ~100ms divergence at 50 nodes with 32% Byzantine peers",
     ],
     stack: ["Rust", "libp2p", "Distributed Systems"],
     href: "https://github.com/heemankv/BFT-Metronome",
-  },
-  {
-    name: "AI-Powered Mental Health Chatbot",
-    date: "May 2025",
-    description:
-      "An empathetic, context-aware conversational assistant for mental health support, built on top of large language models.",
-    bullets: [
-      "LangChain-based conversational memory and prompt chaining across sessions",
-      "FastAPI + PostgreSQL backend for low-latency, secure responses",
-      "Anonymized storage of user interaction data",
-    ],
-    stack: ["LangChain", "Gemini API", "Python", "FastAPI", "PostgreSQL"],
   },
 ];

@@ -15,7 +15,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { slug } = await params;
   const post = getPost(slug);
-  return { title: post ? `${post.title} — Anany Singh` : "Post not found" };
+  return { title: post ? post.title : "Post not found" };
 }
 
 export default async function BlogPostPage({
@@ -28,21 +28,18 @@ export default async function BlogPostPage({
   if (!post) notFound();
 
   return (
-    <article className="mx-auto max-w-3xl px-6 py-24">
+    <article>
       <Link
         href="/blog"
-        data-cursor-hover
-        className="inline-flex items-center gap-2 font-mono text-sm text-muted hover:text-accent"
+        className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-foreground transition-colors"
       >
-        <ArrowLeft size={14} /> back to blog
+        <ArrowLeft size={14} /> Back to blog
       </Link>
-      <p className="mt-8 font-mono text-xs tracking-widest text-accent uppercase">{post.date}</p>
-      <h1 className="mt-3 text-4xl font-bold tracking-tight sm:text-5xl">{post.title}</h1>
-      <div className="prose prose-lg mt-10 max-w-none text-foreground/85">
+      <h1 className="mt-8 text-3xl font-semibold tracking-tighter sm:text-4xl">{post.title}</h1>
+      <p className="mt-2 text-sm text-muted-foreground">{post.date}</p>
+      <div className="mt-10 flex flex-col gap-5 leading-relaxed text-muted-foreground">
         {post.content.split("\n\n").map((para, i) => (
-          <p key={i} className="mb-5 leading-relaxed">
-            {para}
-          </p>
+          <p key={i}>{para}</p>
         ))}
       </div>
     </article>

@@ -1,11 +1,11 @@
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import HomeProjects from "@/components/section/home-projects";
 import ContactSection from "@/components/section/contact-section";
 import SkillsSection from "@/components/section/skills-section";
 import WorkSection from "@/components/section/work-section";
-import { education, profile } from "@/lib/data";
-import { ArrowUpRight } from "lucide-react";
+import { profile } from "@/lib/data";
 import Link from "next/link";
 
 const BLUR_FADE_DELAY = 0.04;
@@ -75,50 +75,12 @@ export default function Page() {
           </BlurFade>
         </div>
       </section>
-      <section id="education">
-        <div className="flex min-h-0 flex-col gap-y-6">
-          <BlurFade delay={BLUR_FADE_DELAY * 7}>
-            <h2 className="text-xl font-bold">Education</h2>
-          </BlurFade>
-          <div className="flex flex-col gap-8">
-            {education.map((item, index) => (
-              <BlurFade key={item.school} delay={BLUR_FADE_DELAY * 8 + index * 0.05}>
-                <Link
-                  href={item.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-x-3 justify-between group"
-                >
-                  <div className="flex items-center gap-x-3 flex-1 min-w-0">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img
-                      src={item.logo}
-                      alt={item.school}
-                      className="size-8 md:size-10 p-1.5 border rounded-full shadow ring-2 ring-border overflow-hidden object-contain flex-none bg-zinc-900"
-                    />
-                    <div className="flex-1 min-w-0 flex flex-col gap-0.5">
-                      <div className="font-semibold leading-none flex items-center gap-2">
-                        {item.school}
-                        <ArrowUpRight
-                          className="h-3.5 w-3.5 text-muted-foreground opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-200"
-                          aria-hidden
-                        />
-                      </div>
-                      <div className="font-sans text-sm text-muted-foreground">{item.degree}</div>
-                    </div>
-                  </div>
-                  <div className="text-xs tabular-nums text-muted-foreground text-right flex-none">
-                    {item.start} - {item.end}
-                  </div>
-                </Link>
-              </BlurFade>
-            ))}
-          </div>
-        </div>
-      </section>
       <section id="skills">
         <SkillsSection />
       </section>
+      <BlurFade delay={BLUR_FADE_DELAY * 12}>
+        <HomeProjects />
+      </BlurFade>
       <section id="contact">
         <BlurFade delay={BLUR_FADE_DELAY * 16}>
           <ContactSection />

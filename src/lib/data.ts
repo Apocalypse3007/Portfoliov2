@@ -186,6 +186,8 @@ export const games: Game[] = [
 export type Project = {
   name: string;
   date: string;
+  /** One-line summary for the compact homepage list. */
+  tagline: string;
   description: string;
   bullets: string[];
   stack: string[];
@@ -196,6 +198,7 @@ export const projects: Project[] = [
   {
     name: "Sputniq AgentOS",
     date: "May 2026",
+    tagline: "config-driven platform for deploying distributed agentic AI systems",
     description:
       "A config-driven orchestration platform for deploying distributed agentic AI systems, cutting deployment to a single zip upload or one docker compose up.",
     bullets: [
@@ -208,6 +211,7 @@ export const projects: Project[] = [
   {
     name: "SignTrack",
     date: "Mar 2025",
+    tagline: "real-time traffic-signal detection and counting from dashcam footage",
     description:
       "A real-time computer vision pipeline for traffic-signal detection and counting from dashcam footage.",
     bullets: [
@@ -221,6 +225,7 @@ export const projects: Project[] = [
   {
     name: "BFT-Metronome: Byzantine Fault-Tolerant Clock Synchronization",
     date: "Jan 2025 – May 2025",
+    tagline: "byzantine fault-tolerant clock sync that tolerates up to N/3−1 malicious nodes",
     description:
       "A novel Byzantine fault-tolerant clock synchronization protocol combining Brooks-Iyengar sensor fusion with Inter-Tertile Range (ITR) outlier detection to achieve bounded-error time agreement in adversarial peer-to-peer networks, tolerating up to N/3−1 malicious nodes.",
     bullets: [
